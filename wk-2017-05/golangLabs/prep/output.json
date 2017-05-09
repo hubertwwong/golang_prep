@@ -1,0 +1,31 @@
+> findItin
+[[JFK KUL] [JFK NRT] [NRT JFK]]
+[JFK KUL NRT]
+[[0 1] [0 2] [2 0]]
+>insert old
+> findPathDFS 0 adj [1 2] curPath []
+false
+> findPathDFS 1 adj [] curPath [[0 1]]
+false
+> findPathDFS 2 adj [0] curPath [[0 1] [0 2]]
+false
+> findPathDFS 0 adj [1 2] curPath [[0 1] [0 2] [2 0]]
+true
+true
+>paths 
+[[[0 1]]]
+> 6.1 > i 0 cPos 0 > ===========================
+> 6.2 > adj [1 2]
+> 6.3 > curPathIndex 0 > src 0 dest 1 [1 2]
+> 6.3 > inserting  [0 0 0] i 0 curPathIndex 0
+> 6.5 end>
+> 6.1 > i 1 cPos 1 > ===========================
+> 6.2 > adj []
+> 6.5 end>
+> 6.1 > i 2 cPos 1 > ===========================
+> 6.2 > adj []
+> 6.5 end>
+> paths  [0 0 0]
+> 7.
+[JFK KUL KUL KUL]
+[JFK KUL KUL KUL]

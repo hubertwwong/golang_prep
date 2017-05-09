@@ -1,0 +1,84 @@
+package main
+
+import "fmt"
+
+struct Node {
+  next *,
+  value int
+}
+
+// Pushes an int to the linked list.
+// Assuming I asked that it was ok to assume that value was an int.
+// Return the head.
+func push(head *Node, int value) (*Node) {
+  newHead := Node{nil, value}
+  
+  // Head was provided.
+  // point your new head to the current head.
+  if head != nil {
+    newNead.next = head
+  }
+  
+  // The newly created pointer is the head no matter what.
+  // so return newHead
+  return &newHead
+}
+
+// Generates a linked list of n items.
+// Returns the pointer to the head node.
+func genList(n int) (*Node) {
+  // Guards
+  if n <= 0 {
+    return nil
+  }
+
+  // push initial node.
+  curV := n - 1
+  var resultList *Node
+  
+  // Push int values nodes in descending order.
+  for i:=0 ; i<n ;i++ {
+    resultList = push(resultList, curV)
+    curV--
+  }
+
+  return resultList
+}
+
+// Count number of items on the linked list.
+func countList(head *Node) (int) {
+  if head == nil {
+    // Not sure if I should return a non legal number on error.
+    return -1
+  }
+
+  count := 0
+  curP := head
+  
+  for {
+    if curP.next != nil {
+      count++
+      curP = curP.next
+    } else {
+      count++
+      break
+    }
+  }
+  
+  return count
+}
+
+func main() {
+  numItems := 10
+  myList := genList(numItems)
+  nodeCount := countList(myList)
+  fmt.Println("There are", nodeCount, "nodes in the linked list.")
+}
+
+/*
+10:01 start
+10:23 end.
+10:51 start
+10:57 end
+
+*/
